@@ -1,5 +1,5 @@
 const Performer = require('../models/performer');
-const Movie = require('../models/movie');
+const Product = require('../models/product');
 
 module.exports = {
   new: newPerformer,
@@ -8,11 +8,11 @@ module.exports = {
 };
 
 async function addToCast(req, res) {
-  const movie = await Movie.findById(req.params.id);
+  const product = await Product.findById(req.params.id);
   // The cast array holds the performer's ObjectId (referencing)
-  movie.cast.push(req.body.performerId);
-  await movie.save();
-  res.redirect(`/movies/${movie._id}`);
+  product.cast.push(req.body.performerId);
+  await product.save();
+  res.redirect(`/products/${product._id}`);
 }
 
 async function newPerformer(req, res) {

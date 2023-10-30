@@ -9,7 +9,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/performers/new', ensureLoggedIn, performersCtrl.new);
 // POST /performers (create functionality)
 router.post('/performers', ensureLoggedIn, performersCtrl.create);
-// POST /movies/:id/performers (associate a performer with a movie)
-router.post('/movies/:id/performers', ensureLoggedIn, performersCtrl.addToCast);
+// POST /products/:id/performers (associate a performer with a product)
+router.post('/products/:id/performers', ensureLoggedIn, performersCtrl.addToCast);
 
 module.exports = router;

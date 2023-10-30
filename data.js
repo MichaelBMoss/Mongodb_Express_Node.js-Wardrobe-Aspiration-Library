@@ -16,7 +16,7 @@ exports.performers = [
   {name: 'Rami Malek', born: '05-12-1981'}
 ];
 
-exports.movies = [
+exports.products = [
   {title: 'Contact', releaseYear: 1997, mpaaRating: 'PG', nowShowing: false},
   {title: 'Star Wars - A New Hope', releaseYear: 1977, mpaaRating: 'PG', nowShowing: false,
     reviews: [{content: 'The one that started it all!', rating: 5}]
