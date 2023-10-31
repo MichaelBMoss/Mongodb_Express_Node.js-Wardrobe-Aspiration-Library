@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/products" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" placeholder="Max 1000 Characters">
+  <label>Release Year:</label>
+  <input type="text" name="releaseYear" placeholder="1888 - Present Year">
+  <label>MPAA Rating</label>
+  <select name="mpaaRating">
+    <option value="G">G</option>
+    <option value="PG">PG</option>
+    <option value="PG-13">PG-13</option>
+    <option value="R">R</option>
+  </select>
+  <label>Now Showing:</label>
+  <input type="checkbox" name="nowShowing" checked>
+  <input type="submit" value="Add Product">
+</form>
+
+<p><%- errorGuidance %></p>
+
+<%- include('../partials/footer') %>
