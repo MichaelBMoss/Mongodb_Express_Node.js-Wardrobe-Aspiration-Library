@@ -25,28 +25,19 @@ const reviewSchema = new Schema({
 });
 
 const productSchema = new Schema({
-  title: {
+  productName: {
     type: String,
     required: true,
     maxlength: 1000
   },
-  releaseYear: {
+  rating: {
     type: Number,
-    default: function() {
-      return new Date().getFullYear();
-    },
-    min: 1888,
-    max: new Date().getFullYear()  // Set the maximum value to the current year
-  },
-  mpaaRating: {
-    type: String,
-    enum: ['G', 'PG', 'PG-13', 'R']
+    enum: [1, 2, 3, 4, 5]
   },
   cast: [{
     type: Schema.Types.ObjectId,
     ref: 'Performer'
   }],
-  nowShowing: { type: Boolean, default: true },
   reviews: [reviewSchema]
 }, {
   timestamps: true
