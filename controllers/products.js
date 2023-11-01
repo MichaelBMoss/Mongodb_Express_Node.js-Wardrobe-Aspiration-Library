@@ -2,15 +2,15 @@ const Product = require('../models/product');
 const Performer = require('../models/performer');
 
 module.exports = {
-  index,
+  profile,
   show,
   new: newProduct,
   create
 };
 
-async function index(req, res) {
+async function profile(req, res) {
   const products = await Product.find({});
-  res.render('products/index', { title: 'All Products', products });
+  res.render('products/profile', { title: 'All Products', products });
 }
 
 async function show(req, res) {
@@ -27,7 +27,7 @@ async function show(req, res) {
 function newProduct(req, res) {
   // We'll want to be able to render an  
   // errorMsg if the create action fails
-  res.render('products/new', { errorGuidance: '',title: 'Add Product', errorMsg: '' });
+  res.render('products/new', { errorGuidance: '',title: 'My Profile', errorMsg: '' });
 }
 
 async function create(req, res) {
@@ -43,6 +43,6 @@ async function create(req, res) {
   } catch (err) {
     // Typically some sort of validation error
     console.log(err);
-    res.render('products/new', { errorGuidance: 'Your input was not acceptable', title: 'Add Product', errorMsg: err.message });
+    res.render('products/new', { errorGuidance: 'Your input was not acceptable', title: 'My Profile', errorMsg: err.message });
   }
 }

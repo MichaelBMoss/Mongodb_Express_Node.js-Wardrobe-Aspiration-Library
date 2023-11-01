@@ -13,7 +13,7 @@ require('./config/database');
 
 require('./config/passport');
 
-const indexRouter = require('./routes/index');
+const profileRouter = require('./routes/profile');
 const productsRouter = require('./routes/products');
 const reviewsRouter = require('./routes/reviews');
 const performersRouter = require('./routes/performers');
@@ -46,7 +46,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/', indexRouter);
+app.use('/', profileRouter);
 app.use('/products', productsRouter);
 // Mount these routers to root because not all 
 // paths for a related/nested resource begin the same

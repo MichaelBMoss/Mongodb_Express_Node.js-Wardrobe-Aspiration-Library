@@ -5,7 +5,7 @@ const productsCtrl = require('../controllers/products');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 	
 // GET /products
-router.get('/', productsCtrl.index);
+router.get('/', productsCtrl.profile);
 // GET /products/new
 router.get('/new', ensureLoggedIn, productsCtrl.new);
 // GET /products/:id (show functionality) MUST be below new route

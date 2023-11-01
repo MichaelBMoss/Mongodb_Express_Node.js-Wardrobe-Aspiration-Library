@@ -30,15 +30,12 @@ const productSchema = new Schema({
     required: true,
     maxlength: 1000
   },
-  rating: {
-    type: Number,
-    enum: [1, 2, 3, 4, 5]
-  },
-  cast: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Performer'
-  }],
-  reviews: [reviewSchema]
+  brand: String,
+  image: String,
+  category: String,
+  price: Number,
+  link: String,
+  rating: Number,
 }, {
   timestamps: true
 });
