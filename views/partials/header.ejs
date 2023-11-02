@@ -8,12 +8,12 @@
   <title><%= title %></title>
 </head>
 <body>
-  <a href="/products">
+  <a href="/">
     <img id="logo" src="/images/camera.svg" alt="Camera Icon">
   </a>
   <nav>
     <% if (user) { %>
-      <a href="/products/new" <%- title === 'My Profile' ? 'class="active"' : '' %>>MY PROFILE</a>
+      <a href="/profile/<%= user.googleId %>" <%= title === 'My Profile' ? 'class="active"' : '' %>>MY PROFILE</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>

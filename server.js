@@ -14,7 +14,7 @@ require('./config/database');
 require('./config/passport');
 
 const homeRouter = require('./routes/home');
-const productsRouter = require('./routes/products');
+const profileRouter = require('./routes/profile');
 
 var app = express();
 
@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', homeRouter);
-app.use('/products', productsRouter);
+app.use('/profile', profileRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
