@@ -1,5 +1,4 @@
 const Product = require('../models/product');
-const Performer = require('../models/performer');
 
 module.exports = {
   profile,
@@ -10,17 +9,11 @@ module.exports = {
 
 async function profile(req, res) {
   const products = await Product.find({});
-  res.render('products/profile', { title: 'All Products', products });
+  res.render('products/home', { title: 'All Products', products });
 }
 
 async function show(req, res) {
-  // Populate the cast array with performer docs instead of ObjectIds
-  const product = await Product.findById(req.params.id).populate('cast');
-  // Mongoose query builder approach to retrieve performers not the product:
-    // Performer.find({}).where('_id').nin(product.cast)
-  // The native MongoDB approach uses a query object to find 
-  // performer docs whose _ids are not in the product.cast array like this:
-  const performers = await Performer.find({ _id: { $nin: product.cast } }).sort('name');
+  const product = await Product.findById(req.params.id)
   res.render('products/show', { title: 'Product Detail', product, performers });
 }
 

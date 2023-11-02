@@ -5,6 +5,7 @@
 }
 
 body {
+  position: relative;
   margin: 0;
   height: 100vh;
   display: grid;
@@ -23,7 +24,10 @@ body > nav {
   padding: 0 20px 0 30px;
 }
 
-nav > img {
+#logo {
+  position: absolute;
+  left: 10px;
+  top: 5px;
   width: 34px;
   object-fit: contain;
   margin-right: auto;
@@ -67,8 +71,7 @@ nav > a.active {
 }
 
 #new-form *,
-#add-review-form *,
-#add-performer-form * {
+#add-review-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
@@ -120,16 +123,14 @@ table td {
   font-weight: bold;
 }
 
-#add-review-form,
-#add-performer-form {
+#add-review-form {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
   margin-bottom: 2rem;
 }
 
-#add-review-form input[type="submit"],
-#add-performer-form input[type="submit"]  {
+#add-review-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }

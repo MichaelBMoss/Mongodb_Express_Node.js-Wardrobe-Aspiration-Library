@@ -8,12 +8,11 @@
   <title><%= title %></title>
 </head>
 <body>
+  <a href="/products">
+    <img id="logo" src="/images/camera.svg" alt="Camera Icon">
+  </a>
   <nav>
-    <img src="/images/camera.svg">
-    <a href="/products" <%- title === 'All Products' ? 'class="active"' : '' %>>ALL PRODUCTS</a>
     <% if (user) { %>
-      <a href="/performers/new"	<%- title === 'Add Performer' ? 'class="active"' : '' %>>
-      ADD PERFORMER</a>
       <a href="/products/new" <%- title === 'My Profile' ? 'class="active"' : '' %>>MY PROFILE</a>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
