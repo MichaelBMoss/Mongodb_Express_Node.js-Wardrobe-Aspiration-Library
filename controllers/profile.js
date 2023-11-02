@@ -3,5 +3,5 @@ module.exports = {
   };
 
 function profile(req, res) {
-res.render('profile/profile', { title: 'All Products', });
+res.render('profile/profile', { title: 'My Profile', });
 }
