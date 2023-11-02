@@ -2,10 +2,10 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 
-// This app has no "home" page, but your projects should 😀
-router.get('/', function(req, res, next) {
-  res.redirect('/products');
-});
+
+const homeCtrl = require('../controllers/home');
+
+router.get('/', homeCtrl.home);
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(

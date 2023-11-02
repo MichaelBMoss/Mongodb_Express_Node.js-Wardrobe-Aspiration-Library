@@ -4,8 +4,9 @@ module.exports = {
   profile,
   show,
   new: newProduct,
-  create
+  create,
 };
+
 
 async function profile(req, res) {
   const products = await Product.find({});
