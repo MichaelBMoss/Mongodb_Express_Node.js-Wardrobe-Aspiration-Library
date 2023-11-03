@@ -4,7 +4,7 @@ const router = express.Router();
 
 const pieceCtrl = require('../controllers/piece');
 
-router.post('/:googleId/new', pieceCtrl.new);
+router.post('/:googleId/create', pieceCtrl.create);
 
 
 module.exports = router;
