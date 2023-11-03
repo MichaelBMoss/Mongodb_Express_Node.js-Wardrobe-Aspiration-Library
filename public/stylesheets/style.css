@@ -75,12 +75,16 @@ nav > a.active {
   height: 30px;
 }
 
-.toAppear {
+/* .toAppear {
   overflow: hidden;
   transition: height .3s ease-in-out;
   height: 0px;
-}
+} */
 
 .hidden {
   display: none;
+}
+
+input {
+  width: 500px;
 }

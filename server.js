@@ -8,13 +8,13 @@ var passport = require('passport');
 var methodOverride = require('method-override');
 
 require('dotenv').config();
-// connect to the database with AFTER the config vars are processed
-require('./config/database');
 
+require('./config/database');
 require('./config/passport');
 
 const homeRouter = require('./routes/home');
 const profileRouter = require('./routes/profile');
+const pieceRouter = require('./routes/piece');
 
 var app = express();
 
@@ -46,6 +46,9 @@ app.use(function (req, res, next) {
 
 app.use('/', homeRouter);
 app.use('/profile', profileRouter);
+app.use('/piece', pieceRouter);
+
+
 app.use(function(req, res, next) {
   next(createError(404));
 });

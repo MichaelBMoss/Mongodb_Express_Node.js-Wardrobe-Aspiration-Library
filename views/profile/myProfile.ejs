@@ -1,9 +1,47 @@
 <%- include('../partials/header') %>
 <p>my profile</p>
 
-<button id="showFormButton">Show Form</button>
+<!-- <button id="showFormButton">Show Form</button> -->
   <div id="formContainer" class="toAppear">
-   
+    <!-- <button id="closeFormButton">Close</button> -->
+    <form action="/piece/<%= user.googleId %>/new" method="post">
+      <label>Name:
+        <input type="text" name="name" placeholder="Required" maxlength="80">
+      </label><br>
+      <label>Image URL:
+        <input type="text" name="imageURL" placeholder="Required" maxlength="2000">
+      </label><br>
+      <label>Brand:
+        <input type="text" name="brand" maxlength="80">
+      </label><br>
+      <label>Category:
+        <select name="category">
+          <option value="top">Top</option>
+          <option value="bottom">Bottom</option>
+          <option value="dress">Dresse</option>
+          <option value="outerwear">Outerwear</option>
+          <option value="accessory">Accessory</option>
+          <option value="footwear">Footwear</option>
+        </select>
+      </label><br>
+      <label>Price:
+        <input type="number" name="price" maxlength="15">
+      </label><br>
+      <label>Website Link:
+        <input type="text" name="link" maxlength="2000">
+      </label><br>
+      <label>Rating:
+        <select name="rating">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+      </label><br>
+      <button type="submit">Add Piece</button>
+    </form>
+    
 
 
 
