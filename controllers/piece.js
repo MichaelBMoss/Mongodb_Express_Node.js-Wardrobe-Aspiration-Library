@@ -7,12 +7,12 @@ module.exports = {
 
 
 async function create(req, res) {
+  console.log(req.user)
     // try {
-    //     await Piece.create(req.body);
-    //     await res.redirect(`/profile/${req.user._id}`);
-    //   } catch (err) {
-    //     console.log(err);
-    //     res.redirect(`/profile/${req.user._id}`);
-    //   }
-    console.log('WWWWWWWWWWWWWWWWWWWWWWWWWW' + req.user._id + 'WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW')
+    //   const newPiece = await Piece.create(req.body);
+    //   res.redirect(`/profile/${req.user.id}`);
+    // } catch (err) {
+    //   console.log(err);
+    //   res.redirect(`/profile/${req.user.id}`);
+    // }
 }

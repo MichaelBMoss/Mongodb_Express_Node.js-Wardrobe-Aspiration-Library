@@ -15,6 +15,7 @@ require('./config/passport');
 const homeRouter = require('./routes/home');
 const profileRouter = require('./routes/profile');
 const pieceRouter = require('./routes/piece');
+const loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -47,6 +48,7 @@ app.use(function (req, res, next) {
 app.use('/', homeRouter);
 app.use('/profile', profileRouter);
 app.use('/piece', pieceRouter);
+app.use('/login', loginRouter);
 
 
 app.use(function(req, res, next) {
