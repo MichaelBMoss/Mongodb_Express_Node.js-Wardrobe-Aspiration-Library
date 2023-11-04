@@ -14,9 +14,9 @@
   <nav>
     <% if (user) { %>
       <% if (title === 'My Profile') { %>
-        <a href="/profile/<%= user.googleId %>" class="active">MY PROFILE</a>
+        <a href="/profile/<%= user._id %>" class="active">MY PROFILE</a>
       <% } else { %>
-        <a href="/profile/<%= user.googleId %>">MY PROFILE</a>
+        <a href="/profile/<%= user._id %>">MY PROFILE</a>
         <% } %>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
