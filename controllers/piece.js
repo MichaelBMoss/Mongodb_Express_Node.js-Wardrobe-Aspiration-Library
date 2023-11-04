@@ -14,9 +14,9 @@ async function create(req, res) {
       newPiece.users.push(req.user._id);
       res.redirect(`/profile/${req.user._id}`);
       await newPiece.save();
-      const currentUserDocument = await User.findById(req.user._id);
-      currentUserDocument.pieces.push(newPiece._id);
-      await currentUserDocument.save();
+      const curUserDoc = await User.findById(req.user._id);
+      curUserDoc.pieces.push(newPiece._id);
+      await curUserDoc.save();
     } catch (err) {
       console.log(err);
       res.redirect(`/profile/${req.user._id}`);

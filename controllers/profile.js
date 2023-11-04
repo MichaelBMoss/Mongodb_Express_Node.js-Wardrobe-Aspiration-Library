@@ -1,20 +1,27 @@
+const User = require('../models/user')
+
+
 module.exports = {
     profile,
   };
 
-function profile(req, res) {
+
+async function profile(req, res) {
+  const viewedUserDoc = await User.findById(req.params.userId).populate('pieces');
+
     if (req.isAuthenticated()) {
-      const authenticatedUserId = req.user._id;
-      const userIdBeingViewed = req.params.userId;  
-      if (isUserMatching(authenticatedUserId, userIdBeingViewed)) {
-        res.render('profile/myProfile', { title: 'My Profile' });
+      const curUserId = req.user._id;
+      const viewedUserId = req.params.userId;  
+      if (isUserMatching(curUserId, viewedUserId)) {
+        res.render('profile/myProfile', { title: 'My Profile', viewedUserDoc });
       } else {
-        res.render('profile/profile', { title: 'Profile' });
+        res.render('profile/profile', { title: 'Profile', viewedUserDoc });
       }
     } else { 
-      res.render('profile/profile', { title: 'My Profile' });
+      res.render('profile/profile', { title: 'My Profile', viewedUserDoc });
     }
 }
-function isUserMatching(authenticatedUserId, userIdBeingViewed) {
-    return authenticatedUserId == userIdBeingViewed;
+
+function isUserMatching(curUserId, viewedUserId) {
+  return curUserId.toString() === viewedUserId.toString();
 }
