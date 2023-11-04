@@ -1,12 +1,10 @@
 <%- include('../partials/header') %>
 <p>my profile</p>
 
-<!-- <button id="showFormButton">Show Form</button> -->
   <div id="formContainer" class="toAppear">
-    <!-- <button id="closeFormButton">Close</button> -->
     <form action="/piece/<%= user._id %>/create" method="post">
       <label>Name:
-        <input type="text" name="name" placeholder="Required" maxlength="80">
+        <input type="text" name="name" placeholder="Required" maxlength="60">
       </label><br>
       <label>Image URL:
         <input type="text" name="imageURL" placeholder="Required" maxlength="2000">
@@ -42,19 +40,21 @@
       <button type="submit">Add Piece</button>
     </form>
 
-    <%= viewedUserDoc %>
-    
 
-
-
-
-
-
-
-
-
-    
-  </div>
+      <% for (let piece of viewedUserDoc.pieces) { %>
+          <div class="piece">
+              <div class="piece-details">
+                  <p><%= piece.name %></p>
+                  <p><strong>Brand:</strong> <%= piece.brand %></p>
+                  <p><strong>Category:</strong> <%= piece.category %></p>
+                  <p><strong>Price:</strong> $<%= piece.price %></p>
+                  <p><strong>Rating:</strong> <%= piece.rating %></p>
+              </div>
+              <div class="piece-image-div">
+                  <img class="piece-image" src="<%= piece.imageURL %>">
+              </div>
+          </div>
+      <% } %>
 
 <script src="/js/myProfile.js"></script>
 <%- include('../partials/footer') %>

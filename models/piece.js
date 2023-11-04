@@ -6,7 +6,7 @@ const pieceSchema = new Schema({
   name: {
     type: String,
     required: true,
-    maxlength: 80,
+    maxlength: 60,
   },
   imageURL: {
     type: String,

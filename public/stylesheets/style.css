@@ -88,3 +88,42 @@ nav > a.active {
 input {
   width: 500px;
 }
+
+.piece-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.piece {
+  width: 500px;
+  background-color: #fff;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.piece-details {
+  width: 70%;
+  text-align: left;
+  background-color: aqua;
+}
+
+.piece-image-div {
+  position: relative;
+}
+
+.piece-image {
+  position: absolute;
+  width: 50px;
+  height: auto;
+}
