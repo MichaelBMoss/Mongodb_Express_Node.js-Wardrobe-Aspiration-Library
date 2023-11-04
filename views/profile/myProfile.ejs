@@ -37,18 +37,19 @@
           <option value=5>5</option>
         </select>
       </label><br>
-      <button type="submit">Add Piece</button>
+      <button type="submit" style="margin-bottom: 10px;">Add Piece</button>
     </form>
 
 
       <% for (let piece of viewedUserDoc.pieces) { %>
-          <div class="piece">
-              <div class="piece-details">
-                  <p><%= piece.name %></p>
+          <div class="piece-div">
+              <div class="piece-details-div">
+                  <p><strong>Name:</strong> <%= piece.name %></p>
                   <p><strong>Brand:</strong> <%= piece.brand %></p>
                   <p><strong>Category:</strong> <%= piece.category %></p>
                   <p><strong>Price:</strong> $<%= piece.price %></p>
                   <p><strong>Rating:</strong> <%= piece.rating %></p>
+                  <a href="<%= piece.link %>" class="piece-web-link">Website</a>
               </div>
               <div class="piece-image-div">
                   <img class="piece-image" src="<%= piece.imageURL %>">
