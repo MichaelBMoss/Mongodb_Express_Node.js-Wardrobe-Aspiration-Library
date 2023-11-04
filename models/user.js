@@ -10,10 +10,10 @@ const userSchema = new Schema({
   email: String,
   avatar: String,
   profilePicture: String,
-  products: [
+  pieces: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product',
+      ref: 'Piece',
     },
   ],
 }, {
