@@ -55,7 +55,6 @@ nav > a.active {
 .piece-div {
   width: 650px;
   height: 225px;
-  margin: auto;
   margin-top: 20px;
   display: flex;
   border: solid black 2px;
@@ -98,11 +97,24 @@ nav > a.active {
   width: auto;
 }
 
-.single-piece-container {
-  display: flex;
+.profile-pic {
+  width: 290px;
+  height: auto;
 }
 
-.single-piece-container-left {
-  width: 343px;
-  margin-top: 100px;
+.x-triple-container-div {
+  white-space: nowrap; 
+  overflow-x: auto;
+}
+
+.x-wing-div {
+  display: inline-block;
+  width: 333px;
+  background-color: blue;
+}
+
+.x-middle-div {
+  display: inline-block;
+  width: 650px;
+  background-color: darkgreen;
 }
