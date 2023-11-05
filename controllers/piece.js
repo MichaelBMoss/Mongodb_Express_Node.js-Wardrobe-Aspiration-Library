@@ -5,6 +5,7 @@ const User = require('../models/user')
 module.exports = {
     create,
     show,
+    update,
   };
 
 
@@ -41,6 +42,30 @@ async function show(req, res) {
     } else { 
       const curUserId = "Not Logged In";
       res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
+    }
+  } catch (err) {
+    console.log(err);
+    res.redirect(`/`);
+  }
+}
+
+async function update(req, res) {
+  try {
+    if (req.isAuthenticated()) {
+      const curUserId = req.user._id
+      const pieceOwner = req.params.userId 
+      if (curUserId.toString() === pieceOwner.toString()) {
+        const piece = await Piece.findByIdAndUpdate(
+          req.params.pieceId,
+          req.body,
+          { new: true }
+        );
+        res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
+      } else {
+        res.render('/');
+      }
+    } else { 
+      res.render('/');
     }
   } catch (err) {
     console.log(err);

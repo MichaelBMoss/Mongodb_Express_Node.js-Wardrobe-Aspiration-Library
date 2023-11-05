@@ -61,6 +61,14 @@ nav > a.active {
   border: solid black 2px;
 }
 
+.single-piece-div {
+  width: 650px;
+  height: 455px;
+  margin-top: 5px;
+  display: flex;
+  border: solid black 2px;
+}
+
 .piece-div:hover {
   cursor: pointer;
 }
@@ -88,4 +96,13 @@ nav > a.active {
 .piece-image {
   height: 100%;
   width: auto;
+}
+
+.single-piece-container {
+  display: flex;
+}
+
+.single-piece-container-left {
+  width: 343px;
+  margin-top: 5px;;
 }

@@ -3,7 +3,7 @@
 <p>my profile</p>
 <% if (curUserId == viewedUserDoc._id) { %>
   
-  <div id="formContainer" class="toAppear">
+  <div id="formContainer"">
     <form action="/piece/<%= user._id %>/create" method="post">
       <label>Name:
         <input type="text" name="name" placeholder="Required" maxlength="60">
