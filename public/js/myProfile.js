@@ -1,14 +1,12 @@
-const showFormButtonEl = document.getElementById('showFormButton');
-const formContainerEl = document.getElementById('formContainer')
-const closeFormButtonEl = document.getElementById('closeFormButton')
+function initialize() {
+  const pieceDivEls = document.querySelectorAll('.piece-div');
+  for (let div of pieceDivEls) {
+    div.addEventListener('click', function(event) {
+      console.log(event.target)
+      window.location.href = `/piece/${event.currentTarget.getAttribute('user')}/${event.currentTarget.getAttribute('id')}`;
+    });
+  };
+};
 
-showFormButtonEl.addEventListener("click", function() {
-    const formHeight = formContainerEl.scrollHeight;
-    formContainerEl.style.height = formHeight + "px";
-    showFormButtonEl.classList.add('hidden');
-  });
+initialize();
 
-  closeFormButtonEl.addEventListener("click", function() {
-    formContainerEl.style.height = "0px";
-    showFormButtonEl.classList.remove('hidden');
-});

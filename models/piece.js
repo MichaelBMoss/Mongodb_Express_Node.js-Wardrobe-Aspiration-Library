@@ -15,12 +15,11 @@ const pieceSchema = new Schema({
   },
   brand: {
     type: String,
-    maxlength: 80,
+    maxlength: 60,
   },
   category: {
     type: String,
-    maxlength: 80,
-    enum: ['top', 'bottom', 'dress', 'outerwear', 'accessory', 'footwear',],
+    enum: ['Top', 'Bottom', 'Dress', 'Outerwear', 'Accessory', 'Footwear',],
   },
   price: {
     type: Number,

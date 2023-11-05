@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+
 <p>my profile</p>
 
   <div id="formContainer" class="toAppear">
@@ -10,16 +11,16 @@
         <input type="text" name="imageURL" placeholder="Required" maxlength="2000">
       </label><br>
       <label>Brand:
-        <input type="text" name="brand" maxlength="80">
+        <input type="text" name="brand" maxlength="60">
       </label><br>
       <label>Category:
         <select name="category">
-          <option value="top">Top</option>
-          <option value="bottom">Bottom</option>
-          <option value="dress">Dresse</option>
-          <option value="outerwear">Outerwear</option>
-          <option value="accessory">Accessory</option>
-          <option value="footwear">Footwear</option>
+          <option value="Top">Top</option>
+          <option value="Bottom">Bottom</option>
+          <option value="Dress">Dresse</option>
+          <option value="Outerwear">Outerwear</option>
+          <option value="Accessory">Accessory</option>
+          <option value="Footwear">Footwear</option>
         </select>
       </label><br>
       <label>Price:
@@ -42,7 +43,7 @@
 
 
       <% for (let piece of viewedUserDoc.pieces) { %>
-          <div class="piece-div">
+          <div class="piece-div" id="<%= piece._id %>" user="<%= viewedUserDoc._id %>" >
               <div class="piece-details-div">
                   <p><strong>Name:</strong> <%= piece.name %></p>
                   <p><strong>Brand:</strong> <%= piece.brand %></p>
@@ -57,5 +58,7 @@
           </div>
       <% } %>
 
+
 <script src="/js/myProfile.js"></script>
+
 <%- include('../partials/footer') %>
