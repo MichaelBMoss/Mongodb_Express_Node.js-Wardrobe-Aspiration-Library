@@ -62,10 +62,10 @@ async function update(req, res) {
         );
         res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       } else {
-        res.render('/');
+        res.redirect('/');
       }
     } else { 
-      res.render('/');
+      res.redirect('/');
     }
   } catch (err) {
     console.log(err);

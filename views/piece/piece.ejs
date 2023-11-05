@@ -6,7 +6,7 @@
   
     <div id="formContainer">
 
-      <form action="/piece/<%= pieceOwner %>/piece._id/update" method="post">
+      <form action="/piece/<%= pieceOwner %>/<%= piece._id %>/update" method="post">
         <label>Name:
           <input type="text" name="name" placeholder="Required" maxlength="60">
         </label><br>
