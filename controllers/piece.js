@@ -5,6 +5,7 @@ module.exports = {
   create,
   show,
   update,
+  delete: pieceDelete,
 };
 
 async function create(req, res) {
@@ -31,7 +32,7 @@ async function show(req, res) {
     const piece = await Piece.findById(req.params.pieceId);
     console.log('piece = ', piece);
 
-    const pieceOwner = req.params.userId;
+    const pieceOwner = req.params.ownerId;
     console.log('pieceOwner = ', pieceOwner)
     if (req.isAuthenticated()) {
       const curUserId = req.user._id;
@@ -81,5 +82,21 @@ async function update(req, res) {
   } catch (err) {
     console.log(err);
     res.redirect(`/`);
+  }
+}
+
+async function pieceDelete(req, res) {
+  if (req.isAuthenticated()) {
+    try {
+      console.log(req.params.pieceId);
+      await Piece.deleteOne({ _id: req.params.pieceId });
+      res.redirect(`/profile/${req.user._id}`);
+    } catch (err) {
+      console.log(err);
+      res.redirect(`/`);
+    }
+  } else {
+    console.log
+    res.redirect('/login');
   }
 }

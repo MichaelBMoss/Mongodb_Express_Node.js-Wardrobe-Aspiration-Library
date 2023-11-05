@@ -6,9 +6,11 @@ const pieceCtrl = require('../controllers/piece');
 
 router.post('/:userId/create', pieceCtrl.create);
 
-router.get('/:userId/:pieceId', pieceCtrl.show);
+router.get('/:ownerId/:pieceId', pieceCtrl.show);
 
-router.post('/:userId/:pieceId/update', pieceCtrl.update);
+router.get('/:ownerId/:pieceId/delete', pieceCtrl.delete);
+
+
 
 
 module.exports = router;

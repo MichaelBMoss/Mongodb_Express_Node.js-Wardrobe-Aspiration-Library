@@ -43,6 +43,7 @@
         </label><br>
         <button type="submit" style="margin-bottom: 10px;">Update Piece</button>
       </form>
+      <button id="delete-button" pieceOwner="<%= pieceOwner %>" pieceId="<%= piece._id %>">Delete Piece</button>
     </div>
   
 <% } %>
@@ -63,4 +64,8 @@
         </div>
     </div>
     </div>
+
+
+<script src="/js/piece.js"></script>
+
 <%- include('../partials/footer') %>
