@@ -1,28 +1,31 @@
-const User = require('../models/user')
-
+const User = require('../models/user');
 
 module.exports = {
-    show,
-  };
+  show,
+};
 
+async function show(req, res) {
+  try {
+    const viewedUserDoc = await User.findById(req.params.userId).populate('pieces');
+    console.log('viewedUserDoc = ', viewedUserDoc);
 
-  async function show(req, res) {
-    try {
-      const viewedUserDoc = await User.findById(req.params.userId).populate('pieces');
-      if (req.isAuthenticated()) {
-        const curUserId = req.user._id;
-        if (viewedUserDoc._id.toString() === curUserId.toString()) {
-          res.render('profile/profile', { title: 'My Profile', viewedUserDoc, curUserId });
-        } else {
-          res.render('profile/profile', { title: viewedUserDoc.name + ' WAL', viewedUserDoc, curUserId });
-        }
+    if (req.isAuthenticated()) {
+      const curUserId = req.user._id;
+      console.log('curUserId = ', curUserId);
+
+      if (viewedUserDoc._id.toString() === curUserId.toString()) {
+        res.render('profile/profile', { title: 'My Profile', viewedUserDoc, curUserId });
       } else {
-        const curUserId = 'not logged in';
         res.render('profile/profile', { title: viewedUserDoc.name + ' WAL', viewedUserDoc, curUserId });
       }
-    } catch (err) {
-      console.log(err);
-      res.redirect('/');
+    } else {
+      const curUserId = 'not logged in';
+      console.log('curUserId = ', curUserId);
+
+      res.render('profile/profile', { title: viewedUserDoc.name + ' WAL', viewedUserDoc, curUserId });
     }
+  } catch (err) {
+    console.log(err);
+    res.redirect('/');
   }
-  
+}

@@ -34,7 +34,7 @@ const pieceSchema = new Schema({
     type: Number,
     enum: [1, 2, 3, 4, 5],
   },
-  users: [
+  owner: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
