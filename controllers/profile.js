@@ -6,22 +6,23 @@ module.exports = {
   };
 
 
-async function profile(req, res) {
-  const viewedUserDoc = await User.findById(req.params.userId).populate('pieces');
-
-    if (req.isAuthenticated()) {
-      const curUserId = req.user._id;
-      const viewedUserId = req.params.userId;  
-      if (isUserMatching(curUserId, viewedUserId)) {
-        res.render('profile/myProfile', { title: 'My Profile', viewedUserDoc });
+  async function profile(req, res) {
+    try {
+      const viewedUserDoc = await User.findById(req.params.userId).populate('pieces');
+      if (req.isAuthenticated()) {
+        let curUserId = req.user._id;
+        if (viewedUserDoc._id.toString() === curUserId.toString()) {
+          res.render('profile/profile', { title: 'My Profile', viewedUserDoc, curUserId });
+        } else {
+          res.render('profile/profile', { title: viewedUserDoc.name + ' WAL', viewedUserDoc, curUserId });
+        }
       } else {
-        res.render('profile/profile', { title: 'Profile', viewedUserDoc });
+        const curUserId = 'not logged in';
+        res.render('profile/profile', { title: viewedUserDoc.name + ' WAL', viewedUserDoc, curUserId });
       }
-    } else { 
-      res.render('profile/profile', { title: 'My Profile', viewedUserDoc });
+    } catch (err) {
+      console.log(err);
+      res.redirect('/');
     }
-}
-
-function isUserMatching(curUserId, viewedUserId) {
-  return curUserId.toString() === viewedUserId.toString();
-}
+  }
+  

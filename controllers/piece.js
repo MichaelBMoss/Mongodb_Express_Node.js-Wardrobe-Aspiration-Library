@@ -30,16 +30,17 @@ async function create(req, res) {
 async function show(req, res) {
   try {
     const piece = await Piece.findById(req.params.pieceId);
+    const pieceOwner = req.params.userId 
     if (req.isAuthenticated()) {
       const curUserId = req.user._id
-      const pieceOwner = req.params.userId 
       if (curUserId.toString() === pieceOwner.toString()) {
-        res.render('piece/myPiece', { title: 'My Piece', piece });
+        res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       } else {
-        res.render('piece/piece', { title: 'Piece', piece });
+        res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       }
     } else { 
-      res.render('piece/piece', { title: 'Piece', piece });
+      const curUserId = "Not Logged In";
+      res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
     }
   } catch (err) {
     console.log(err);

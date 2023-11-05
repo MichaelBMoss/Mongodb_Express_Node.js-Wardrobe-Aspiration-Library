@@ -61,6 +61,10 @@ nav > a.active {
   border: solid black 2px;
 }
 
+.piece-div:hover {
+  cursor: pointer;
+}
+
 .piece-details-div {
   width: 60%;
   height: 100%;
