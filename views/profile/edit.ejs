@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+
+<div class="triple-container-div">
+    <div class="wing-div">
+     
+    </div>
+    <div class="profile-edit-middle-div">
+        
+        <% if (user.profilePicture) { %>
+            <img class="profile-pic" src="<%= user.profilePicture %>">
+        <% } %>
+        
+        <p class="centered-text"> Please enter the link to a SQUARE profile picture</p>
+
+        <div id="formContainer"">
+            <form action="/profile/<%= user._id %>/update" method="post">
+              <label>Profile Picture Link:
+                <input type="text" name="profilePicture" placeholder="Required" maxlength="2000">
+              </label>
+              <button type="submit" style="margin-bottom: 10px;">Submit</button>
+            </form>
+            </div>
+
+    </div>
+    <div class="wing-div">
+        
+    </div>
+  </div>
+  
+
+<%- include('../partials/footer') %>

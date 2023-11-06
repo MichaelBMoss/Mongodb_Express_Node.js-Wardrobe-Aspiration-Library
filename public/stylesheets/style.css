@@ -83,6 +83,7 @@ nav > a.active {
 
 .piece-web-link {
   margin-left: 10px;
+  color: black;
 }
 
 .piece-image-div {
@@ -99,7 +100,9 @@ nav > a.active {
 
 .profile-pic {
   width: 290px;
-  height: auto;
+  height: 290px;
+  margin: auto;
+  border: solid black 2px;
 }
 
 .triple-container-div {
@@ -110,12 +113,10 @@ nav > a.active {
 
 .wing-div {
   width: 333px;
-  height: 500px;
 }
 
 .middle-div {
   width: 650px;
-  height: 10px;
 }
 
 #delete-button {
@@ -132,6 +133,18 @@ nav > a.active {
 width: 290px;
 }
 
-#username {
+.centered-text {
   text-align: center;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+.profile-edit-middle-div {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

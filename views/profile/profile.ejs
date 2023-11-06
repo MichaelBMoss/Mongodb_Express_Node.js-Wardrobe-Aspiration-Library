@@ -3,13 +3,14 @@
 
 <div class="triple-container-div">
     <div class="wing-div">
-      <div id="profile-pic-div">
+      <div id="profile-pic-div" curUserId="<%= curUserId %>" viewedUserId="<%= viewedUserDoc._id %>">
         <% if (viewedUserDoc.profilePicture) { %>
-
+              <img class="profile-pic" src="<%= viewedUserDoc.profilePicture %>"
             <% } else { %>
               <img class="profile-pic" src="/images/profile-pic-placeholder.jpg" alt="Profile Pic Placeholder">
             <% } %>
-            <p id="username"><%= viewedUserDoc.name %></p>
+            
+            <p class="centered-text"><%= viewedUserDoc.name %></p>
       </div>
     </div>
     <div class="middle-div">
