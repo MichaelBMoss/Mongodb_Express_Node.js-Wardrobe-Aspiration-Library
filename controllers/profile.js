@@ -9,6 +9,7 @@ module.exports = {
 async function show(req, res) {
   try {
     const viewedUserDoc = await User.findById(req.params.userId).populate('pieces');
+    viewedUserDoc.pieces.reverse();
     if (req.isAuthenticated()) {
       const curUserId = req.user._id;
       if (viewedUserDoc._id.toString() === curUserId.toString()) {
