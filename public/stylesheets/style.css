@@ -23,7 +23,7 @@ nav a {
   position: absolute;
   left: 10px;
   top: 5px;
-  width: 34px;
+  width: 100px;
 }
 
 main {
@@ -126,4 +126,12 @@ nav > a.active {
 #formContainer {
   margin-left: 20px;
   margin-top: 30px;
+}
+
+#profile-pic-div {
+width: 290px;
+}
+
+#username {
+  text-align: center;
 }

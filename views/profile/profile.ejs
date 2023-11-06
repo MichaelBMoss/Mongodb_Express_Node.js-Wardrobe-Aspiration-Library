@@ -3,11 +3,14 @@
 
 <div class="triple-container-div">
     <div class="wing-div">
+      <div id="profile-pic-div">
         <% if (viewedUserDoc.profilePicture) { %>
 
             <% } else { %>
               <img class="profile-pic" src="/images/profile-pic-placeholder.jpg" alt="Profile Pic Placeholder">
             <% } %>
+            <p id="username"><%= viewedUserDoc.name %></p>
+      </div>
     </div>
     <div class="middle-div">
         <% for (let piece of viewedUserDoc.pieces) { %>
