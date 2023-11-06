@@ -9,7 +9,7 @@
             <% } else { %>
               <img class="profile-pic" src="/images/profile-pic-placeholder.jpg" alt="Profile Pic Placeholder">
             <% } %>
-            
+
             <p class="centered-text"><%= viewedUserDoc.name %></p>
       </div>
     </div>
@@ -36,10 +36,10 @@
             <div id="formContainer"">
             <form action="/piece/<%= user._id %>/create" method="post">
               <label>Name:
-                <input type="text" name="name" placeholder="Required" maxlength="60">
+                <input type="text" name="name" placeholder="Required" maxlength="60" required>
               </label><br>
               <label>Image URL:
-                <input type="text" name="imageURL" placeholder="Required" maxlength="2000">
+                <input type="text" name="imageURL" placeholder="Required" maxlength="2000" required>
               </label><br>
               <label>Brand:
                 <input type="text" name="brand" maxlength="60">
@@ -49,7 +49,7 @@
                   <option value="">Select Category</option>
                   <option value="Top">Top</option>
                   <option value="Bottom">Bottom</option>
-                  <option value="Dress">Dresse</option>
+                  <option value="Dress">Dress</option>
                   <option value="Outerwear">Outerwear</option>
                   <option value="Accessory">Accessory</option>
                   <option value="Footwear">Footwear</option>

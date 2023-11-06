@@ -1,5 +1,4 @@
 function initialize() {
-  console.log('js is working');
   pieceDivClickable();
   profilePicDivClickable()
 };

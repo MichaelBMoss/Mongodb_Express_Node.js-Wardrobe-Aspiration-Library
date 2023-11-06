@@ -1,5 +1,16 @@
 <%- include('../partials/header') %>
 
-<p>Home Page</p>
+<div class="home-container-div">
+
+    <% for (let piece of randomPieces) { %>
+        <div class="home-piece-div" onclick="handleClick(this)" pieceOwner="<%= piece.owner %>" pieceId="<%= piece._id %>">
+            <img class="home-piece-img" src="<%= piece.imageURL %>">
+        </div>
+    <% } %>
+
+</div>
+
+
+<script src="/js/home.js"></script>
 
 <%- include('../partials/footer') %>

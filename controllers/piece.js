@@ -12,9 +12,7 @@ async function create(req, res) {
   if (req.isAuthenticated()) {
     try {
       const newPiece = await Piece.create(req.body);
-      console.log('newPiece = ', newPiece);
       const curUserDoc = await User.findById(req.user._id);
-      console.log('curUserDoc = ', curUserDoc);
       curUserDoc.pieces.push(newPiece._id);
       await curUserDoc.save();
       res.redirect(`/profile/${req.user._id}`);
@@ -29,27 +27,26 @@ async function create(req, res) {
 
 async function show(req, res) {
   try {
-    const piece = await Piece.findById(req.params.pieceId);
-    console.log('piece = ', piece);
-
+    console.log('1')
+    const piece = await Piece.findById(req.params.pieceId).populate('owner');
     const pieceOwner = req.params.ownerId;
-    console.log('pieceOwner = ', pieceOwner)
     if (req.isAuthenticated()) {
+      console.log('2')
       const curUserId = req.user._id;
-      console.log('curUserId = ', curUserId);
-
       if (curUserId.toString() === pieceOwner.toString()) {
+        console.log('3')
         res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       } else {
+        console.log('4')
         res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       }
     } else {
+      console.log('5')
       const curUserId = 'Not Logged In';
-      console.log('curUserId = ', curUserId);
-
       res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
     }
   } catch (err) {
+    console.log('6')
     console.log(err);
     res.redirect(`/`);
   }
@@ -59,9 +56,7 @@ async function update(req, res) {
   try {
     if (req.isAuthenticated()) {
       const curUserId = req.user._id;
-      console.log('curUserId = ', curUserId);
       const pieceOwner = req.params.ownerId;
-      console.log('pieceOwner = ', pieceOwner);
       if (curUserId.toString() === pieceOwner.toString()) {
         const updateFields = {};
         for (const key in req.body) {
@@ -74,7 +69,6 @@ async function update(req, res) {
           updateFields,
           { new: true }
         );
-        console.log('piece = ', piece);
         res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       } else {
         res.redirect('/');
@@ -91,7 +85,6 @@ async function update(req, res) {
 async function pieceDelete(req, res) {
   if (req.isAuthenticated()) {
     try {
-      console.log(req.params.pieceId);
       await Piece.deleteOne({ _id: req.params.pieceId });
       res.redirect(`/profile/${req.user._id}`);
     } catch (err) {
@@ -99,7 +92,6 @@ async function pieceDelete(req, res) {
       res.redirect(`/`);
     }
   } else {
-    console.log
     res.redirect('/login');
   }
 }

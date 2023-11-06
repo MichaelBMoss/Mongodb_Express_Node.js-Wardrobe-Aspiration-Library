@@ -9,4 +9,7 @@ function initialize() {
   
   initialize();
   
-  
+function userClick(clickedUser) {
+  const pieceOwner = clickedUser.getAttribute('pieceOwner');
+  window.location.href = `/profile/${pieceOwner}`
+}

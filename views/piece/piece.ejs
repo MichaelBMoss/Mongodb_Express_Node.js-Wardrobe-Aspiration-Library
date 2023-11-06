@@ -19,6 +19,7 @@
                 <p><strong>Price:</strong> $<%= piece.price %></p>
                 <p><strong>Rating:</strong> <%= piece.rating %></p>
                 <a href="<%= piece.link %>" class="piece-web-link">Website</a>
+                <p>Piece Added By <strong class="pointer" onclick="userClick(this)" pieceOwner="<%= piece.owner[0]._id %>"> <%= piece.owner[0].name %> </strong></p>
             </div>
             <div class="piece-image-div">
                 <img class="piece-image" src="<%= piece.imageURL %>">
