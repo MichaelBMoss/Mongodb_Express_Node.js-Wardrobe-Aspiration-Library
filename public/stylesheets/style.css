@@ -54,7 +54,7 @@ nav > a.active {
 
 .piece-div {
   width: 650px;
-  height: 235px;
+  height: 250px;
   margin-top: 20px;
   display: flex;
   border: solid black 2px;
