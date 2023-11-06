@@ -62,7 +62,7 @@ nav > a.active {
 
 .single-piece-div {
   width: 650px;
-  height: 455px;
+  height: 450px;
   margin-top: 5px;
   display: flex;
   border: solid black 2px;
@@ -102,19 +102,28 @@ nav > a.active {
   height: auto;
 }
 
-.x-triple-container-div {
-  white-space: nowrap; 
-  overflow-x: auto;
+.triple-container-div {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; 
 }
 
-.x-wing-div {
-  display: inline-block;
+.wing-div {
   width: 333px;
-  background-color: blue;
+  height: 500px;
 }
 
-.x-middle-div {
-  display: inline-block;
+.middle-div {
   width: 650px;
-  background-color: darkgreen;
+  height: 10px;
+}
+
+#delete-button {
+  margin-top: 220px;
+  margin-left: 210px;
+}
+
+#formContainer {
+  margin-left: 20px;
+  margin-top: 30px;
 }

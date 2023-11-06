@@ -10,6 +10,7 @@ router.get('/:ownerId/:pieceId', pieceCtrl.show);
 
 router.get('/:ownerId/:pieceId/delete', pieceCtrl.delete);
 
+router.post('/:ownerId/:pieceId/update', pieceCtrl.update);
 
 
 

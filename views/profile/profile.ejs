@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 
 
-<div class="x-triple-container-div">
-    <div class="x-wing-div">
-      <% if (viewedUserDoc.profilePicture) { %>
+<div class="triple-container-div">
+    <div class="wing-div">
+        <% if (viewedUserDoc.profilePicture) { %>
 
-      <% } else { %>
-        <img class="profile-pic" src="/images/profile-pic-placeholder.jpg" alt="Profile Pic Placeholder">
-      <% } %>
+            <% } else { %>
+              <img class="profile-pic" src="/images/profile-pic-placeholder.jpg" alt="Profile Pic Placeholder">
+            <% } %>
     </div>
-    <div class="x-middle-div">
+    <div class="middle-div">
         <% for (let piece of viewedUserDoc.pieces) { %>
             <div class="piece-div" id="<%= piece._id %>" user="<%= viewedUserDoc._id %>" >
                 <div class="piece-details-div">
@@ -26,8 +26,7 @@
             </div>
         <% } %>
     </div>
-    <div class="x-wing-div">
-
+    <div class="wing-div">
         <% if (curUserId.toString() == viewedUserDoc._id.toString()) { %>
   
             <div id="formContainer"">
@@ -43,6 +42,7 @@
               </label><br>
               <label>Category:
                 <select name="category">
+                  <option value="">Select Category</option>
                   <option value="Top">Top</option>
                   <option value="Bottom">Bottom</option>
                   <option value="Dress">Dresse</option>
@@ -59,6 +59,7 @@
               </label><br>
               <label>Rating:
                 <select name="rating">
+                  <option value="">Select Rating</option>
                   <option value=1>1</option>
                   <option value=2>2</option>
                   <option value=3>3</option>

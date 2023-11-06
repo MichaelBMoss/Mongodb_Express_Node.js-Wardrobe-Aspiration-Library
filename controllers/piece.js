@@ -60,18 +60,21 @@ async function update(req, res) {
     if (req.isAuthenticated()) {
       const curUserId = req.user._id;
       console.log('curUserId = ', curUserId);
-
-      const pieceOwner = req.params.userId;
+      const pieceOwner = req.params.ownerId;
       console.log('pieceOwner = ', pieceOwner);
-
       if (curUserId.toString() === pieceOwner.toString()) {
+        const updateFields = {};
+        for (const key in req.body) {
+          if (key in req.body && req.body[key]) {
+            updateFields[key] = req.body[key];
+          }
+        }
         const piece = await Piece.findByIdAndUpdate(
           req.params.pieceId,
-          req.body,
+          updateFields,
           { new: true }
         );
         console.log('piece = ', piece);
-
         res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       } else {
         res.redirect('/');
