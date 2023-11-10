@@ -31,22 +31,17 @@ async function show(req, res) {
     const piece = await Piece.findById(req.params.pieceId).populate('owner');
     const pieceOwner = req.params.ownerId;
     if (req.isAuthenticated()) {
-      console.log('2')
       const curUserId = req.user._id;
       if (curUserId.toString() === pieceOwner.toString()) {
-        console.log('3')
         res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       } else {
-        console.log('4')
         res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
       }
     } else {
-      console.log('5')
       const curUserId = 'Not Logged In';
       res.render('piece/piece', { title: 'Piece', piece, curUserId, pieceOwner });
     }
   } catch (err) {
-    console.log('6')
     console.log(err);
     res.redirect(`/`);
   }

@@ -25,7 +25,7 @@
                     <a href="<%= piece.link %>" class="piece-web-link">Website</a>
                 </div>
                 <div class="piece-image-div">
-                    <img class="piece-image" src="<%= piece.imageURL %>">
+                    <img class="piece-image-small" src="<%= piece.imageURL %>">
                 </div>
             </div>
         <% } %>
@@ -33,7 +33,7 @@
     <div class="wing-div">
         <% if (curUserId.toString() == viewedUserDoc._id.toString()) { %>
   
-            <div id="formContainer"">
+            <div class="form-container">
             <form action="/piece/<%= user._id %>/create" method="post">
               <label>Name:
                 <input type="text" name="name" placeholder="Required" maxlength="60" required>

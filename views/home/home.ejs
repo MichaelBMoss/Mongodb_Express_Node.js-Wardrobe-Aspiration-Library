@@ -3,7 +3,7 @@
 <div class="home-container-div">
 
     <% for (let piece of randomPieces) { %>
-        <div class="home-piece-div" onclick="handleClick(this)" pieceOwner="<%= piece.owner %>" pieceId="<%= piece._id %>">
+        <div class="home-piece-div pointer" onclick="handleClick(this)" pieceOwner="<%= piece.owner %>" pieceId="<%= piece._id %>">
             <img class="home-piece-img" src="<%= piece.imageURL %>">
         </div>
     <% } %>
