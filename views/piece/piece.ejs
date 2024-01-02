@@ -42,7 +42,7 @@
                   <input type="text" name="brand" maxlength="60" value="<%= piece.brand %>">
                 </label><br>
                 <label>Category:
-                  <select name="category">
+                  <select name="category" id="categorySelect">
                     <option value="">Select Category</option>
                     <option value="Top">Top</option>
                     <option value="Bottom">Bottom</option>
@@ -59,7 +59,7 @@
                   <input type="text" name="link" maxlength="2000" value="<%= piece.link %>">
                 </label><br>
                 <label>Rating:
-                  <select name="rating">
+                  <select name="rating" id="ratingSelect">
                     <option value="">Select Rating</option>
                     <option value=1>1</option>
                     <option value=2>2</option>
@@ -77,5 +77,25 @@
 </div>
 
 <script src="/js/piece.js"></script>
+
+<script>
+  const selectedCategory = '<%= piece.category %>';
+  const categorySelect = document.getElementById('categorySelect');
+  for (let i = 0; i < categorySelect.options.length; i++) {
+    if (categorySelect.options[i].value === selectedCategory) {
+      categorySelect.options[i].selected = true;
+      break;
+    }
+  }
+
+  const selectedRating = '<%= piece.rating %>';
+  const ratingSelect = document.getElementById('ratingSelect');
+  for (let p = 0; p < ratingSelect.options.length; p++) {
+    if (ratingSelect.options[p].value === selectedRating) {
+      ratingSelect.options[p].selected = true;
+      break;
+    }
+  }
+</script>
 
 <%- include('../partials/footer') %>
