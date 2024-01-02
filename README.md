@@ -40,4 +40,4 @@ With Wardrobe Aspiration Library (WAL) users have a digital repository for the a
 
 # Link
 
-[Click to visit Wardrobe Aspiration Library](your deployment url here)
+[Click to visit Wardrobe Aspiration Library](https://wardrobe-aspiration-library-bb6858182927.herokuapp.com/)
