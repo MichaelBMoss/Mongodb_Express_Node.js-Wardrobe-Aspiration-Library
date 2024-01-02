@@ -1,11 +1,5 @@
-# <Wardrobe Aspiration Library>
+# Wardrobe Aspiration Library
 With Wardrobe Aspiration Library (WAL) users have a digital repository for the attire they aspire to. Once users have created a profile, they can add images and information about cool gear from brand websites, clothing retailers and e-commerce platforms like Etsy and Ebay. WAL allows users to share their unique style, explore the fashion choices of others, discover stylish clothing items, and express themselves creatively. Visiting a user's WAL is an excellent idea when searching for a gift they'll truly appreciate!
-
-# Screenshot
-
-<img src="./screenshots/wal-sh-01.png">
-<img src="./screenshots/wal-sh-02.png">
-<img src="./screenshots/wal-sh-03.png">
 
 # Technologies Used
 
@@ -16,10 +10,21 @@ With Wardrobe Aspiration Library (WAL) users have a digital repository for the a
 - HTML
 - CSS
 - git
+- Google Oauth
 
-# Getting Started
+# Screenshots
 
-[Click to visit Wardrobe Aspiration Library](your deployment url here)
+<img src="./screenshots/wal-sh-01.png">
+
+#
+
+<img src="./screenshots/wal-sh-02.png">
+
+#
+
+<img src="./screenshots/wal-sh-03.png">
+
+#
 
 # Next Steps
 
@@ -32,3 +37,7 @@ With Wardrobe Aspiration Library (WAL) users have a digital repository for the a
     - The ability for users to provide additional information on their profile like their clothing sizes
     - Quick add functionality to streamline the adding of pieces
     - A browser extension and or integration with retailers to allow users quick add pieces to their collection
+
+# Link
+
+[Click to visit Wardrobe Aspiration Library](your deployment url here)
