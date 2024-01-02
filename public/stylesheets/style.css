@@ -237,13 +237,13 @@ input, select {
   }
 
   .home-container-div {
-    width: 95%;
+    width: 99%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .home-piece-div {
-    width: 150px;
+    width: 100px;
   }
 }
