@@ -196,3 +196,54 @@ input, select {
   width: 100%;
   margin-bottom: 8px;
 }
+
+@media (max-width: 1185px) {
+  
+  .triple-container-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #delete-button {
+    position: static;
+    margin: auto;
+  }
+
+  .wing-div {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .piece-div {
+    width: 100%;
+    height: auto;
+
+  }
+  
+  .single-piece-div {
+    width: 100%;
+    height: auto;
+  }
+
+  .middle-div {
+    width: 100%;
+  }
+
+  .form-container {
+    margin-left: 0px;
+  }
+
+  .home-container-div {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .home-piece-div {
+    width: 150px;
+  }
+}
