@@ -1,5 +1,5 @@
 # <Wardrobe Aspiration Library>
-With Wardrobe Aspiration Library (WAL) users have a digital repository for they attire they aspire to. Once users have created a profile, they can add images and information about cool gear from brand websites, clothing retailers and e-commerce platforms like Etsy and Ebay. WAL allows users to share their unique style, explore the fashion choices of others, discover stylish clothing items, and express themselves creatively. Visiting a user's WAL is an excellent idea when you're searching for a gift they'll truly appreciate!
+With Wardrobe Aspiration Library (WAL) users have a digital repository for the attire they aspire to. Once users have created a profile, they can add images and information about cool gear from brand websites, clothing retailers and e-commerce platforms like Etsy and Ebay. WAL allows users to share their unique style, explore the fashion choices of others, discover stylish clothing items, and express themselves creatively. Visiting a user's WAL is an excellent idea when searching for a gift they'll truly appreciate!
 
 # Screenshot
 
